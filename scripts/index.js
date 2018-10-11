@@ -4,7 +4,7 @@ console.log('im here')
 
 //  #1 Make some code run  when i click the button 
 
-const triggerElement = document.querySelector();
+const triggerElement = document.querySelector('[data-trigger]');
 
 
 
