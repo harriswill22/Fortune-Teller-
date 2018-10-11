@@ -11,9 +11,16 @@ console.log('im here')
 const triggerElement = document.querySelector('[data-trigger]');
 const outputElement = document.querySelector('[data-output]');
 
+const fortunes = [
+    "A closed mouth gathers no feet.",
+    "A conclusion is simply the place where you got tired of thinking.",
+    "A cynic is only a frustrated optimist.",
+    "A foolish man listens to his heart.",
+    "You will die alone and poorly dressed."
+];
 triggerElement.addEventListener('click', function hello() {
     console.log('Hello addEvent Listener!');
-    outputElement.textContent = " lalalalla"
+    outputElement.textContent = fortunes.pop();
 });
 
 
