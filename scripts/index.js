@@ -42,8 +42,27 @@ picture: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExI
 },
 ]
 
-
 let index = 0;
+
+function createFortuneButton() {
+    const theButton = document.createElement('button');
+    theButton.textContent = 'Click here for a fortune'
+    theButton.setAttribute('data-trigger', '')
+    return theButton;
+}
+
+function createButtonContainer() {
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('buttonContainer');
+
+    // const theButton = createFortuneButton();
+    // buttonContainer.appendChild(theButton)
+    buttonContainer.appendChild(createFortuneButton());
+
+    return buttonContainer;
+}
+
+
 
 triggerElement.addEventListener('click', function hello() {
     console.log('Hello addEvent Listener!');
