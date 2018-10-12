@@ -8,8 +8,8 @@
 // - a function that says what to do when the event happens 
 
 
-const triggerElement = document.querySelector('[data-trigger]');
-const triggerElement2 = document.querySelector('[data-trigger2]');
+// const triggerElement = document.querySelector('[data-trigger]');
+// const triggerElement2 = document.querySelector('[data-trigger2]');
 const outputElement = document.querySelector('[data-output]');
 const DisplayImage = document.querySelector('[data-image]')
 
@@ -48,6 +48,20 @@ function createFortuneButton() {
     const theButton = document.createElement('button');
     theButton.textContent = 'Click here for a fortune'
     theButton.setAttribute('data-trigger', '')
+    
+
+    theButton.addEventListener('click', function hello() {
+        console.log('Hello addEvent Listener!');
+        const newFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+        outputElement.textContent = newFortune;
+        index++;
+        if (index > fortunes.length -1) {
+            index = 0;
+        }
+
+
+        // index = index + 1;
+    });
     return theButton;
 }
 
@@ -62,35 +76,35 @@ function createButtonContainer() {
     return buttonContainer;
 }
 
+document.body.appendChild(createButtonContainer());
+
+// triggerElement.addEventListener('click', function hello() {
+//     console.log('Hello addEvent Listener!');
+//     const newFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+//     outputElement.textContent = newFortune;
+//     index++;
+//     if (index > fortunes.length -1) {
+//         index = 0;
+//     }
+//     // index = index + 1;
+// });
 
 
-triggerElement.addEventListener('click', function hello() {
-    console.log('Hello addEvent Listener!');
-    const newFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-    outputElement.textContent = newFortune;
-    index++;
-    if (index > fortunes.length -1) {
-        index = 0;
-    }
-    // index = index + 1;
-});
+// triggerElement2.addEventListener('click', function helloCars() {
+//     console.log('Hello addEvent Listener!');
+//     const newCars = Cars[Math.floor(Math.random() * Cars.length)];
+//     outputElement.textContent = newCars.text;
+//     DisplayImage.src = newCars.picture;
+//     console.log(DisplayImage);
+//     index++;
+//     if (index > Cars.length -1) {
+//         index = 0;
+//         console.log(newCars)
 
+//     }
 
-triggerElement2.addEventListener('click', function helloCars() {
-    console.log('Hello addEvent Listener!');
-    const newCars = Cars[Math.floor(Math.random() * Cars.length)];
-    outputElement.textContent = newCars.text;
-    DisplayImage.src = newCars.picture;
-    console.log(DisplayImage);
-    index++;
-    if (index > Cars.length -1) {
-        index = 0;
-        console.log(newCars)
-
-    }
-
-    // index = index + 1;
-});
+//     // index = index + 1;
+// });
 
 
  
